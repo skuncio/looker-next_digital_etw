@@ -1,4 +1,6 @@
-connection: "next_prd_redshift"
+connection: "nd_snowflake_analytics"
+
+#connection: "next_prd_redshift"
 
 # include all the views
 include: "*.view"

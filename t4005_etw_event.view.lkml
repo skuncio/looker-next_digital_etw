@@ -186,8 +186,45 @@ view: t4005_etw_event {
     sql: ${TABLE}.c4005_version ;;
   }
 
+  dimension: latitude_longitude {
+    alias: [event_location]
+    view_label: "Location"
+    type: location
+    sql_latitude: ${c4005_lat} ;;
+    sql_longitude: ${c4005_lon} ;;
+  }
+
   measure: count {
     type: count
     drill_fields: []
   }
+
+  measure: distinct_user_adid {
+    view_label: "User"
+    type: count_distinct
+    value_format: "[>=1000000]0.0,,\"M\";[>=1000]0.0,\"K\";0"
+    sql: ${c4005_adid} ;;
+  }
+
+  measure: distinct_user_did {
+    view_label: "User"
+    type: count_distinct
+    value_format: "[>=1000000]0.0,,\"M\";[>=1000]0.0,\"K\";0"
+    sql: ${c4005_did} ;;
+  }
+
+  measure: distinct_user_nxtu {
+    view_label: "User"
+    type: count_distinct
+    value_format: "[>=1000000]0.0,,\"M\";[>=1000]0.0,\"K\";0"
+    sql: ${c4005_nxtu} ;;
+  }
+
+  measure: distinct_user_omo_accid_pid {
+    view_label: "User"
+    type: count_distinct
+    value_format: "[>=1000000]0.0,,\"M\";[>=1000]0.0,\"K\";0"
+    sql: ${c4005_omo_accid} || ${c4005_omo_pid} ;;
+  }
+
 }

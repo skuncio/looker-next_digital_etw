@@ -126,6 +126,11 @@ view: t4005_etw_event {
     sql: ${TABLE}.c4005_omo_pid ;;
   }
 
+  dimension: user_omo_accid_pid {
+    type: string
+    sql: ${c4005_omo_accid} || ${c4005_omo_pid} ;;
+  }
+
   dimension: c4005_os {
     type: string
     sql: ${TABLE}.c4005_os ;;

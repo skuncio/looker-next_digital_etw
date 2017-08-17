@@ -18,7 +18,7 @@ view: t4008_beacon_event {
   }
 
   dimension: c4008_bcat {
-#    hidden: yes
+  hidden: yes
   type: string
   sql: ${TABLE}.C4008_BCAT::string ;;
 }

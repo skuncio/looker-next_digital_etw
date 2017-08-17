@@ -10,6 +10,8 @@ include: "*.dashboard"
 
 explore: t4005_etw_event {}
 
+explore: t4008_beacon_event {}
+
 # - explore: aa
 
 # - explore: action

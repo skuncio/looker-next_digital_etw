@@ -168,7 +168,7 @@ dimension: BCAT_BP011 {
     sql: ${TABLE}.C4008_EDATE ;;
   }
 
-  dimension: c4008_edate_day {
+  dimension: c4008_edate_date_d {
     group_label: "c4008_edate"
     sql: TO_DATE(${TABLE}.c4008_edate) ;;
   }

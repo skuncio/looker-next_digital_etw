@@ -325,9 +325,15 @@ dimension: BCAT_BP011 {
     drill_fields: []
   }
 
-    measure: distinct_beacon {
+  measure: distinct_beacon {
     type: count_distinct
     value_format: "[>=1000000]0.0,,\"M\";[>=1000]0.0,\"K\";0"
     sql: ${c4008_beacon_id} ;;
+  }
+
+  measure: distinct_user_adid {
+    type: count_distinct
+    value_format: "[>=1000000]0.0,,\"M\";[>=1000]0.0,\"K\";0"
+    sql: ${c4008_adid} ;;
   }
 }

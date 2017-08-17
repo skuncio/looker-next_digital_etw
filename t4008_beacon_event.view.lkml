@@ -6,11 +6,11 @@ view: t4008_beacon_event {
     sql: ${TABLE}.C4008_ADID ;;
   }
 
-  dimension: c4008_area {
-    hidden: yes
-    type: string
-    sql: ${TABLE}.C4008_AREA ;;
-  }
+#  dimension: c4008_area {
+#    hidden: yes
+#    type: string
+#    sql: ${TABLE}.C4008_AREA ;;
+#  }
 
   dimension: c4008_battery {
     type: number
@@ -120,11 +120,11 @@ dimension: BCAT_BP011 {
     sql: ${TABLE}.C4008_BV ;;
   }
 
-  dimension: c4008_cuisine {
-    hidden: yes
-    type: string
-    sql: ${TABLE}.C4008_CUISINE ;;
-  }
+#  dimension: c4008_cuisine {
+#    hidden: yes
+#    type: string
+#    sql: ${TABLE}.C4008_CUISINE ;;
+#  }
 
   dimension: c4008_did {
     type: string
@@ -136,11 +136,11 @@ dimension: BCAT_BP011 {
     sql: ${TABLE}.C4008_DISTANCE ;;
   }
 
-  dimension: c4008_district {
-    hidden: yes
-    type: string
-    sql: ${TABLE}.C4008_DISTRICT ;;
-  }
+#  dimension: c4008_district {
+#    hidden: yes
+#    type: string
+#    sql: ${TABLE}.C4008_DISTRICT ;;
+#  }
 
   dimension: c4008_eaction {
     type: string
@@ -169,7 +169,6 @@ dimension: BCAT_BP011 {
   }
 
   dimension: c4008_edate_day {
-#    alias: [view_date]
     group_label: "c4008_edate"
     sql: TO_DATE(${TABLE}.c4008_edate) ;;
   }
@@ -185,41 +184,41 @@ dimension: BCAT_BP011 {
     sql: ${TABLE}.C4008_ELABEL_ID ;;
   }
 
-  dimension: c4008_eval {
-    hidden: yes
-    type: string
-    sql: ${TABLE}.C4008_EVAL ;;
-  }
+#  dimension: c4008_eval {
+#    hidden: yes
+#    type: string
+#    sql: ${TABLE}.C4008_EVAL ;;
+#  }
 
-  dimension: c4008_eval2 {
-    hidden: yes
-    type: string
-    sql: ${TABLE}.C4008_EVAL2 ;;
-  }
+#  dimension: c4008_eval2 {
+#    hidden: yes
+#    type: string
+#    sql: ${TABLE}.C4008_EVAL2 ;;
+#  }
 
-  dimension: c4008_eval3 {
-    hidden: yes
-    type: string
-    sql: ${TABLE}.C4008_EVAL3 ;;
-  }
+#  dimension: c4008_eval3 {
+#    hidden: yes
+#    type: string
+#    sql: ${TABLE}.C4008_EVAL3 ;;
+#  }
 
-  dimension: c4008_eval4 {
-    hidden: yes
-    type: string
-    sql: ${TABLE}.C4008_EVAL4 ;;
-  }
+#  dimension: c4008_eval4 {
+#    hidden: yes
+#    type: string
+#    sql: ${TABLE}.C4008_EVAL4 ;;
+#  }
 
-  dimension: c4008_foodtype {
-    hidden: yes
-    type: string
-    sql: ${TABLE}.C4008_FOODTYPE ;;
-  }
+#  dimension: c4008_foodtype {
+#    hidden: yes
+#    type: string
+#    sql: ${TABLE}.C4008_FOODTYPE ;;
+#  }
 
-  dimension: c4008_from {
-    hidden: yes
-    type: string
-    sql: ${TABLE}.C4008_FROM ;;
-  }
+#  dimension: c4008_from {
+#    hidden: yes
+#    type: string
+#    sql: ${TABLE}.C4008_FROM ;;
+#  }
 
   dimension: c4008_lat {
     hidden: yes
@@ -274,11 +273,11 @@ dimension: BCAT_BP011 {
     sql: ${TABLE}.C4008_PLATFORM ;;
   }
 
-  dimension: c4008_pos {
-    hidden: yes
-    type: number
-    sql: ${TABLE}.C4008_POS ;;
-  }
+#  dimension: c4008_pos {
+#    hidden: yes
+#    type: number
+#    sql: ${TABLE}.C4008_POS ;;
+#  }
 
   dimension: c4008_prod {
     type: string
@@ -305,11 +304,11 @@ dimension: BCAT_BP011 {
     sql: ${TABLE}.C4008_SITE ;;
   }
 
-  dimension: c4008_spending {
-    hidden: yes
-    type: string
-    sql: ${TABLE}.C4008_SPENDING ;;
-  }
+#  dimension: c4008_spending {
+#    hidden: yes
+#    type: string
+#    sql: ${TABLE}.C4008_SPENDING ;;
+#  }
 
   dimension: c4008_sz {
     type: string

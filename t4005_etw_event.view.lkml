@@ -233,4 +233,12 @@ view: t4005_etw_event {
     sql: ${c4005_omo_accid} || ${c4005_omo_pid} ;;
   }
 
+  measure: distinct_elabel_id {
+    view_label: "ID"
+    type: count_distinct
+    value_format: "[>=1000000]0.0,,\"M\";[>=1000]0.0,\"K\";0"
+    sql: ${c4005_elabel_id} ;;
+#    approximate: yes
+  }
+
 }

@@ -47,6 +47,7 @@ view: t4005_etw_event {
   }
 
   dimension_group: c4005_edate {
+    group_label: "c4005_edate"
     type: time
     timeframes: [
       raw,
@@ -58,7 +59,13 @@ view: t4005_etw_event {
       year,
       hour_of_day
     ]
+    convert_tz: no
     sql: ${TABLE}.c4005_edate ;;
+  }
+
+  dimension: c4005_edate_date_d {
+    group_label: "c4005_edate"
+    sql: TO_DATE(${TABLE}.c4005_edate) ;;
   }
 
   dimension: c4005_elabel {

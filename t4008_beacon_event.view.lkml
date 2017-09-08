@@ -165,6 +165,7 @@ dimension: BCAT_BP011 {
       year,
       hour_of_day
     ]
+    convert_tz: no
     sql: ${TABLE}.C4008_EDATE ;;
   }
 

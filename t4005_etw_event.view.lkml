@@ -26,6 +26,16 @@ view: t4005_etw_event {
     sql: ${TABLE}.c4005_cuisine ;;
   }
 
+  dimension: c4005_cuisinetype {
+    type: string
+    sql: ${TABLE}.c4005_cuisinetype ;;
+  }
+
+  dimension: c4005_foodgroup {
+    type: string
+    sql: ${TABLE}.c4005_foodgroup ;;
+  }
+
   dimension: c4005_did {
     type: string
     sql: ${TABLE}.c4005_did ;;

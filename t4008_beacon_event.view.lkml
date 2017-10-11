@@ -167,7 +167,7 @@ dimension: BCAT_BP011 {
   }
 
   dimension_group: c4008_edate {
-    group_label: "c4008_edate"
+    group_label: "C4008 Edate"
     type: time
     timeframes: [
       raw,
@@ -184,7 +184,7 @@ dimension: BCAT_BP011 {
   }
 
   dimension: c4008_edate_date_d {
-    group_label: "c4008_edate"
+    group_label: "C4008 Edate"
     sql: TO_DATE(${TABLE}.c4008_edate) ;;
   }
 

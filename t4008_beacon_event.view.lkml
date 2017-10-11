@@ -6,6 +6,13 @@ view: t4008_beacon_event {
     sql: ${TABLE}.C4008_ADID ;;
   }
 
+
+  dimension: c4008_adtype {
+    type: string
+    sql: ${TABLE}.C4008_ADTYPE ;;
+  }
+
+
 #  dimension: c4008_area {
 #    hidden: yes
 #    type: string
@@ -25,63 +32,63 @@ view: t4008_beacon_event {
 
 dimension: BCAT_BP001 {
   view_label: "Beacon Category"
-  label: "1.餐飲"
+  label: "01.餐飲"
   type: string
   sql: ${TABLE}.c4008_bcat:BP001::string ;;
 }
 
 dimension: BCAT_BP002 {
   view_label: "Beacon Category"
-  label: "2. 時裝"
+  label: "02. 時裝"
   type: string
   sql: ${TABLE}.c4008_bcat:BP002::string ;;
 }
 
 dimension: BCAT_BP003 {
   view_label: "Beacon Category"
-  label: "3. 消閒"
+  label: "03. 消閒"
   type: string
   sql: ${TABLE}.c4008_bcat:BP003::string ;;
 }
 
 dimension: BCAT_BP004 {
   view_label: "Beacon Category"
-  label: "4. 電子"
+  label: "04. 電子"
   type: string
   sql: ${TABLE}.c4008_bcat:BP004::string ;;
 }
 
 dimension: BCAT_BP005 {
   view_label: "Beacon Category"
-  label: "5. 美容"
+  label: "05. 美容"
   type: string
   sql: ${TABLE}.c4008_bcat:BP005::string ;;
 }
 
 dimension: BCAT_BP006 {
   view_label: "Beacon Category"
-  label: "6. 家居"
+  label: "06. 家居"
   type: string
   sql: ${TABLE}.c4008_bcat:BP006::string ;;
 }
 
 dimension: BCAT_BP007 {
   view_label: "Beacon Category"
-  label: "7. 親子"
+  label: "07. 親子"
   type: string
   sql: ${TABLE}.c4008_bcat:BP007::string ;;
 }
 
 dimension: BCAT_BP008 {
   view_label: "Beacon Category"
-  label: "8. 旅遊"
+  label: "08. 旅遊"
   type: string
   sql: ${TABLE}.c4008_bcat:BP008::string ;;
 }
 
 dimension: BCAT_BP009 {
   view_label: "Beacon Category"
-  label: "9. 汽車"
+  label: "09. 汽車"
   type: string
   sql: ${TABLE}.c4008_bcat:BP009::string ;;
 }
@@ -125,6 +132,13 @@ dimension: BCAT_BP011 {
 #    type: string
 #    sql: ${TABLE}.C4008_CUISINE ;;
 #  }
+
+
+#   dimension: c4008_cuisinetype {
+#     type: string
+#     sql: ${TABLE}.C4008_CUISINETYPE ;;
+#   }
+
 
   dimension: c4008_did {
     type: string
@@ -174,6 +188,11 @@ dimension: BCAT_BP011 {
     sql: TO_DATE(${TABLE}.c4008_edate) ;;
   }
 
+  dimension: c4008_edt {
+    type: number
+    sql: ${TABLE}.C4008_EDT ;;
+  }
+
   dimension: c4008_elabel {
     type: string
     sql: ${TABLE}.C4008_ELABEL ;;
@@ -209,6 +228,11 @@ dimension: BCAT_BP011 {
 #    sql: ${TABLE}.C4008_EVAL4 ;;
 #  }
 
+#   dimension: c4008_foodgroup {
+#     type: string
+#     sql: ${TABLE}.C4008_FOODGROUP ;;
+#   }
+
 #  dimension: c4008_foodtype {
 #    hidden: yes
 #    type: string
@@ -241,6 +265,11 @@ dimension: BCAT_BP011 {
     type: location
     sql_latitude: ${c4008_lat} ;;
     sql_longitude: ${c4008_lon} ;;
+  }
+
+  dimension: c4008_mode {
+    type: string
+    sql: ${TABLE}.C4008_MODE ;;
   }
 
   dimension: c4008_nxtu {
@@ -310,6 +339,43 @@ dimension: BCAT_BP011 {
 #    type: string
 #    sql: ${TABLE}.C4008_SPENDING ;;
 #  }
+
+  dimension: c4008_std {
+    type: number
+    sql: ${TABLE}.C4008_STD ;;
+  }
+
+  dimension_group: c4008_stm {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+      hour_of_day
+    ]
+    convert_tz: no
+    sql: ${TABLE}.C4008_STM ;;
+  }
+
+  dimension_group: c4008_etm {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+      hour_of_day
+    ]
+    convert_tz: no
+    sql: ${TABLE}.C4008_ETM ;;
+  }
 
   dimension: c4008_sz {
     type: string

@@ -403,4 +403,10 @@ dimension: BCAT_BP011 {
     value_format: "[>=1000000]0.0,,\"M\";[>=1000]0.0,\"K\";0"
     sql: ${c4008_adid} ;;
   }
+
+  measure: distinct_beacon_region {
+    type: count_distinct
+    value_format: "[>=1000000]0.0,,\"M\";[>=1000]0.0,\"K\";0"
+    sql: ${c4008_bloc} ;;
+  }
 }

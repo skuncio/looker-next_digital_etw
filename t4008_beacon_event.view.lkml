@@ -279,7 +279,19 @@ dimension: BCAT_BP011 {
   dimension: c4008_mode {
     type: string
     sql: ${TABLE}.C4008_MODE ;;
-  }
+    case: {
+      when: {
+        sql: ${TABLE}.C4008_MODE = 'FG';;
+        label: "Foreground"
+      }
+      when: {
+        sql: ${TABLE}.C4008_MODE = 'BG';;
+        label: "Background"
+      }
+      else: "Nil"
+    }
+
+ }
 
   dimension: c4008_nxtu {
     type: string

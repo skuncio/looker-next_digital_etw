@@ -8,8 +8,17 @@ view: t4008_beacon_event {
 
 
   dimension: c4008_adtype {
-    type: string
-    sql: ${TABLE}.C4008_ADTYPE ;;
+    case: {
+      when: {
+        sql: ${TABLE}.C4008_ADTYPE = "E" or  ${TABLE}.C4008_ADTYPE = "NMI";;
+        label: "NEXTMOBILE"
+      }
+      when: {
+        sql: ${TABLE}.C4008_ADTYPE = "R" or ${TABLE}.C4008_ADTYPE = "ADEC";;
+        label: "ADEC"
+      }
+      else: "unknown"
+    }
   }
 
 

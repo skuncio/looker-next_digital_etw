@@ -281,14 +281,13 @@ dimension: BCAT_BP011 {
     sql: ${TABLE}.C4008_MODE ;;
     case: {
       when: {
-        sql: ${TABLE}.C4008_MODE = 'FG';;
+        sql: ${TABLE}.C4008_MODE = 'FG' or ${TABLE}.C4008_MODE is null or ${TABLE}.C4008_MODE='';;
         label: "Foreground"
       }
       when: {
         sql: ${TABLE}.C4008_MODE = 'BG';;
         label: "Background"
       }
-      else: "Nil"
     }
 
  }

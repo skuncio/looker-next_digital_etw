@@ -12,6 +12,71 @@ explore: t4005_etw_event {}
 
 explore: t4008_beacon_event {}
 
+explore: t4052_beacon_shop {
+  view_label: "Shops"
+  join:  t4050_beacon_group{
+    view_label: "Beacon Group"
+    sql_on: ${t4050_beacon_group.c4050_beacongroup_id} = ${t4052_beacon_shop.c4052_beacongroup_id} ;;
+    relationship: many_to_one
+    type: inner
+  }
+  join: t4051_beacon_merchant {
+    view_label: "Merchant"
+    sql_on: ${t4051_beacon_merchant.c4051_merchant_id} = ${t4052_beacon_shop.c4052_merchant_id} ;;
+    relationship: many_to_one
+    type: inner
+  }
+  join: t4053_beacon_category {
+    view_label: "Category"
+    sql_on: ${t4053_beacon_category.c4053_category_id} = ${t4052_beacon_shop.c4052_category_id} ;;
+    relationship: many_to_one
+    type: inner
+  }
+}
+
+explore: t4055_beacon_location {
+  view_label: "Beacons"
+  join: t4052_beacon_shop {
+    view_label: "Shop"
+    sql_on: ${t4052_beacon_shop.c4052_shop_id} = ${t4055_beacon_location.c4055_shop_id} ;;
+    relationship: many_to_one
+    type: inner
+  }
+}
+
+explore: t4051_beacon_merchant {
+  view_label: "Merchants"
+  join: t4053_beacon_category {
+    view_label: "Category"
+    sql_on: ${t4053_beacon_category.c4053_category_id} = ${t4051_beacon_merchant.c4051_category_id} ;;
+    relationship: many_to_one
+    type: inner
+  }
+}
+
+explore: t4050_beacon_group {
+  view_label: "Beacon Groups"
+  join: t4054_beacon_district {
+    view_label: "District"
+    sql_on: ${t4054_beacon_district.c4054_district_id} = ${t4050_beacon_group.c4050_district_id};;
+    relationship: many_to_one
+    type: inner
+  }
+}
+
+explore: t4054_beacon_district {}
+
+explore: t4053_beacon_category {
+  view_label: "Categories"
+  join: parent {
+    from: t4053_beacon_category
+    view_label: "Parent Category"
+    sql_on: ${parent.c4053_category_id} = ${t4053_beacon_category.c4053_parent_id} ;;
+    relationship: many_to_one
+    type: inner
+  }
+}
+
 # - explore: aa
 
 # - explore: action

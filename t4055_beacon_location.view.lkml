@@ -26,6 +26,14 @@ view: t4055_beacon_location {
     sql: ${TABLE}.C4055_SHOP_ID ;;
   }
 
+  dimension: beacon_latitude_longitude {
+    alias: [view_location]
+    view_label: "Location"
+    type: location
+    sql_latitude: ${c4055_lat} ;;
+    sql_longitude: ${c4055_lon} ;;
+  }
+
   measure: count {
     type: count
     drill_fields: []

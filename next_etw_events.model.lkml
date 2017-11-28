@@ -32,6 +32,12 @@ explore: t4052_beacon_shop {
     relationship: many_to_one
     type: inner
   }
+  join: t4055_beacon_location {
+    view_label: "Beacons"
+    sql_on: ${t4055_beacon_location.c4055_beacon_id} = ${t4052_beacon_shop.c4052_beacon_id} ;;
+    relationship: one_to_many
+    type: inner
+  }
 }
 
 explore: t4055_beacon_location {
@@ -39,6 +45,12 @@ explore: t4055_beacon_location {
   join: t4052_beacon_shop {
     view_label: "Shop"
     sql_on: ${t4052_beacon_shop.c4052_shop_id} = ${t4055_beacon_location.c4055_shop_id} ;;
+    relationship: many_to_one
+    type: inner
+  }
+  join: t4050_beacon_group {
+    view_label: "Beacon Group"
+    sql_on: ${t4055_beacon_location.c4055_beacongroup_id} = ${t4050_beacon_group.c4050_beacongroup_id} ;;
     relationship: many_to_one
     type: inner
   }

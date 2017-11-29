@@ -20,6 +20,12 @@ explore: t4052_beacon_shop {
     relationship: many_to_one
     type: inner
   }
+  join: t4054_beacon_district {
+    view_label: "District"
+    sql_on: ${t4054_beacon_district.c4054_district_id} = ${t4050_beacon_group.c4050_district_id} ;;
+    relationship: many_to_one
+    type: inner
+  }
   join: t4051_beacon_merchant {
     view_label: "Merchant"
     sql_on: ${t4051_beacon_merchant.c4051_merchant_id} = ${t4052_beacon_shop.c4052_merchant_id} ;;
